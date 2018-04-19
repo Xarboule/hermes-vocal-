@@ -14,7 +14,7 @@ project (Hermes-vocal++)
 include_directories("${PROJECT_BINARY_DIR}"
 	"${PROJECT_BINARY_DIR}/core")
 
-set(SOURCE_FILES
+set(SERVER_SOURCE_FILES
 	server.cpp
 	core/Skill.hpp
 	core/Skill.cpp
@@ -22,7 +22,12 @@ set(SOURCE_FILES
 	core/core.cpp)
 
 
+set(CLIENT_SOURCE_FILES
+	client.cpp)
+
 # add the executable
-add_executable(server ${SOURCE_FILES})
+add_executable(server ${SERVER_SOURCE_FILES})
+
+add_executable(client ${CLIENT_SOURCE_FILES})
 
 
