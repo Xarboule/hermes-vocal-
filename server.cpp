@@ -1,5 +1,9 @@
-#include<core/Skill.hpp>
 #include<core/core.hpp>
+#include<iostream>
+#include<boost/asio.hpp>
+
+using namespace boost::asio;
+using namespace boost::asio::ip;
 
 #define OFFLINE_MODE
 
@@ -9,6 +13,12 @@ void waitForOrder(string &order){
 	cin >> order;
 }
 #else
+
+io_service ioservice;
+tcp::resolver resolv{ioservice};
+tcp::socket tcp_socket{ioservice};
+std::array<char, 4096> bytes;
+
 void waitForOrder(string &order){
 	//TODO
 	return EXIT_FAILURE;

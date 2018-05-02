@@ -3,3 +3,5 @@ tags
 cmake_install.cmake
 CMakeFiles/*
 Makefile
+client
+server

@@ -1,3 +1,4 @@
+#include <boost/algorithm/string.hpp>
 #include<iostream>
 #include<vector>
 #include<string>
@@ -15,7 +16,8 @@ class Skill
 	public:
 		Skill (vector<string>, vector<string>, vector<string>);
 		bool ask (string);
-
+		int similitude(string);
 };
+
 
 #endif
